@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
+h1, h2 {
+  color: #DB0A5B;
+  margin-top: 10px;
+  margin-bottom: 20px; }
+
+h1 {
+  font-family: "Roboto", sans-serif; }
+
+h2 {
+  font-family: "Open Sans", sans-serif; }
+
+th {
+  border: 1px solid #ddd;
+  padding: 10px; }
+
+.btn-valid:hover {
+  color: white;
+  background-color: #DB0A5B; }
+
+/*# sourceMappingURL=style.css.map */

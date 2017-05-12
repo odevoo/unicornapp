@@ -1,0 +1,82 @@
+<div class="container">
+    <h1 class="text-center">Welcome on UnicornsLoveApp !</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2 class="text-center">Here, you can see all our Unicorns and make some LOVE!</h2>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Choose a mate and create a baby!</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let unicorn of tabunicorns; ">
+                        <td>{{unicorn.name}}</td>
+                        <td>{{unicorn.color}}</td>
+                        <td>{{unicorn.gender}}</td>
+                        <td>{{unicorn.age}}</td>
+                        <td>
+                            <form class="form-inline" (ngSubmit)="makeLove(unicorn)">
+                                <div class="form-group">
+                                    <label for="mate"></label>
+
+                                    <select  id="mate" class="form-control" [(ngModel)]="newLove.mate" name="mate">
+
+                                        <option *ngFor="let unicornlove of tabunicorns; let i = index" value="{{i}}" >{{unicornlove.name}}</option>
+                                    </select>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-default btn-valid">Make love!</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2 class="text-center">Here, you can create your own Unicorn !</h2>
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form class="form-inline" (ngSubmit)="createUnicorn()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name"  [(ngModel)]="newUnicorn.name" name="name"/>  
+                </div>
+                <div class="form-group">
+                    <label for="color">Color</label>
+                    <input type="color" name="color" [(ngModel)]="newUnicorn.color" id="color"/>  
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" class="form-control" [(ngModel)]="newUnicorn.gender" name="gender">
+
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>  
+                        <option value="other">Other</option>    
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="text" name="age" id="age" [(ngModel)]="newUnicorn.age" />  
+                </div>
+
+                <div class="form-group">
+                <button type="submit" class="btn-valid btn btn-default">New Unicorn</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>

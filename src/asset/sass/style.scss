@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$primary-color: #DB0A5B;
+$border-color: #ddd;
+
+h1, h2 {
+    color: $primary-color;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: $primary-font;
+}
+
+h2 {
+    font-family: $secondary-font;
+}
+
+th {
+    border: 1px solid $border-color;
+    padding: 10px;
+}
+
+.btn-valid:hover {
+    color: white;
+    background-color: $primary-color;
+}
