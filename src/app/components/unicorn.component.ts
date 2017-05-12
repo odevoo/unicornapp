@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Unicorn } from './unicorn';
 import { UNICORNS } from './unicorns';
@@ -12,10 +12,11 @@ import { UnicornService } from './unicorn.service';
 })
 
 
-export class UnicornComponent implements OnInit { 
+export class UnicornComponent { 
 
 
   constructor(
+
     private unicornService: UnicornService
     ){
 
@@ -27,7 +28,7 @@ export class UnicornComponent implements OnInit {
   newBaby = new Unicorn;
 
 
-  makeLove(unicorn) {
+  makeLove(unicorn: any) {
 
     let index1 = this.tabunicorns.indexOf(unicorn);
     let index2 = this.newLove.mate;
@@ -48,12 +49,12 @@ export class UnicornComponent implements OnInit {
     this.tabunicorns.push(this.newUnicorn);
   }
 
-  makeBaby(name, color) {  
-    this.newBaby = {};
-    this.newBaby.name = name;
-    this.newBaby.color = color;
-    this.newBaby.gender  = "male";
-    this.newBaby.age = 1;
-    this.tabunicorns.push(this.newBaby);
+  makeBaby(name: any, color: any) {
+    let copy = Object.assign({}, this.newBaby);
+    copy.name = name;
+    copy.color = color;
+    copy.gender  = "male";
+    copy.age = 1;
+    this.tabunicorns.push(copy);
   }
 }
